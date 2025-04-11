@@ -1,0 +1,89 @@
+// Notes-Linux_Systems // 
+
+-: Upper high level: 
+:- UNIX (base-architecture), Linux(OS-ecosystem), GNOME|KDE(Desktop Environment GUI), Kernel(firmwares), Distro(Distribution | provider), GNU(Not-Unix OS);
++bootloarder, filesystem, service, X-Window_System/gdm(GUI), Shell(CLI Interpreter e.g BASH), daemons(i.e Distro images)
+*GNOME<>COSMOS
+__
+-: Main three distribution "families": Red Hat Systems(RHEL), SUSE, Debian;
+:- Distros:- Ubuntu/Mint, OpenSUSE, CentOS8/Fedora; 
+__
+-: Every linux distro has its own "package manager" that does inst-upd-del of any resource;
+:- It lies beneath SHELL and it's accessible through (mainly) terminal;
+*yum-dnf_rpm(RHEL), zipper-dnf_rpm(SUSE), apt-get_dpkg(DEBIAN)
+__
+-: Naming-scheme procedures (BOOT):
+-: BIOS(Basic Input Output System), MBR(Master Boot Record), POST(Power On Self Test), GRUB(Grand Unified Boot-Loader);
+__
+-: Folders part of post Kernel>SO BOOT (i.e initializing services):
+:- /sbin/init, /mnt, systemd, /lib/systemd/systemd, systemctl, /dev/sda1, initramfs;
+__
+-: Types of Filesystems:
+:- Conventional, Flash, Database, Special;
+*EXT3, EXT4, XFS, BTRFS
+__
+-: Common File Manager && Nautilus+gdm:
+:- Main "Home" folders e.g vid, img, doc...;
+*Ctrl+1|2 change grid<>list view, Ctrl+H show hidden_files
+**Alt+F2 executes commands && programs
+__
+-: Time-zone operates in NTP [Network Time Protocol]:
+:- UTC (Coordinated Universal time) rather than GMT (Greenwich Mean time);
+*More accurate ^
+- DHCP (Dynamic Host Configuration Protocol)
+- MAC [Media Access Control Address]
+__
+-: Default (per-distro) package managers:
+-: Ubuntu(dpkg), RHEL[RPM], OpenSUSE{YaST};
+*data-package&advanced-packaging-tool, Red Package Manager, Yet another Software-Tool  
+__
+-: Protocols for Web-Mailing:
+-: IMAP(Image Messaging Access Protocol), POP(Post Office Protocol);
+*HTML-Mails
+__
+-: Terminal info:
+-: located at '/bin/bash', named as "gnome-terminal"(F2 command);
+__
+-: Common main commands:
+-: cat(type out file | files), head(prints topFile), tail(prints endFile), man(doc-paging);
+*Default structure: ls -a /home/angela -> Command + -options|switches + arguments
+__
+-: Virtual Terminals (i.e GUI<>CLI):
+-: Ctrl+Alt+F2|3|4|5|6;
+*Alt+F2|3|4|5|6 [VT<>VT] 
+__
+-: Commonly used app-dir(path):
+-: "/bin", `/usr/bin`, '/sbin' or ´/usr/sbin´;
+*/opt, /usr/local/bin, /usr/local/sbin, /home/<accountusr>/bin
+__
+-: Default terminal string-var($PS1):
+-: Changing to usr<>host[~$ PS1="\u@\h \$ "];
+__
+-: File Datastreams:
+-: standard -> input(stdin, keyboard), output(stdout, terminal), error(stderr, log-file);
+* System values | file-descriptors [0-1-2]
+** Changing file-stream ($ do_something < input-file | > output-file | 2> error-file)
+__
+-: Pipeline structure:
+-: Output<>Input/Output<>Output;
+* $ command1 | command2 | command3
+__
+-: Wildcards syntax:
+-: ?, *, [set], [!set];
+* wildcard"anything" (fetch the global-pckg sys) 
+__
+-: FHS(File-system Hierarchy Standard), NFS(Networking File Systems):
+-: /(root)
+bin/                etc/                lost+found/         root/               srv/                var/
+bin.usr-is-merged/  home/               media/              run/                swap.img            
+boot/               lib/                mnt/                sbin/               sys/                
+cdrom/              lib64/              opt/                sbin.usr-is-merged/ tmp/                
+dev/                lib.usr-is-merged/  proc/               snap/               usr/;
+*Partitions segregated & disk mounted(daemons)
+__
+// 
+
+
+
+
+
